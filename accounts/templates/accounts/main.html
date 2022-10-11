@@ -1,0 +1,74 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review App</title>
+
+    <link rel="stylesheet" type="text/css" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome/css/all.css' %}">
+
+</head>
+<body class="light slider body" id="body">
+    <i class="darkmode-on"></i>
+    <i class="notification-on"></i>
+    <i class="cookie-on"></i>
+
+
+    <!-- PRELOADER SECTION -->
+    <div id="preloader"></div>
+
+    <!-- SCROLL BUTTON -->
+    <div class="scroll-btn">
+        <i class="fa-solid fa-chevron-up" id="scroll-up" onclick="topFunction()"></i>
+        <i class="fa-solid fa-chevron-down" id="scroll-down" onclick="downFunction()"></i>
+        <button id="scroll-btn" onclick="showScroll()">GoTo</button>
+    </div>
+
+    <!-- NAVBAR SECTION -->
+    {% include 'accounts/navbar.html' %}
+
+    <!-- HOME CONTENT SECTION -->
+    <div class="home-content">
+        <div class="home-content-body">
+            <div class="home-content-header">
+                <form>
+                    <input type="search" placeholder="search">
+                    <a class="search-content-btn" href="{% url 'search' %}">
+                        <i class="fa-solid fa-search search-content-icon"></i>
+                    </a>
+                </form>
+
+                <h2 class="logo-text">Review<span style="color: #4d5bf9; font-family: var(--font-main);">Me</span>
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- SUB CONTENT SECTION -->
+    {% block content %}
+
+    {% endblock %}
+    
+    <!-- SIGNOUT -->
+    {% include 'accounts/signout.html' %}
+
+    <!-- FOOTER SECTION -->
+    <div class="main-footer">
+        {% include 'accounts/footer.html' %}
+    </div>
+    
+        
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="{% static '/js/main.js' %}"></script>
+    
+    <script>
+    </script>
+
+</body>
+</html>

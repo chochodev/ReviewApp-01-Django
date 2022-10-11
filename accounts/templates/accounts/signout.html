@@ -1,0 +1,14 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static '/css/signout.css' %}">
+
+<div class="signout-prompt">
+    <div>
+        <span>Are you sure you want to sign out?</span>
+        <span>
+            <a style="color: #1d2578;" href="{% url 'signout' %}">Sign Out</a>
+            <br>
+            <a style="color: #9e3131;" href="#" onclick="_SignOut()">Cancel</a>
+        </span>
+    </div>
+</div>

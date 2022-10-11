@@ -1,0 +1,82 @@
+{% load static %} 
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Anime</title>
+
+    <link rel="stylesheet" href="{% static '/css/searchpage.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+    <link rel="stylesheet" href="{% static '/css/home-content.css' %}">
+
+</head>
+<body class="light slider search-body" id="body">
+
+    <!-- PRELOADER SECTION -->
+    <div id="preloader"></div>
+
+    <h2 class="logo-text">Review<span style="color: #4d5bf9; font-family: var(--font-main);">Me</span>
+    </h2>
+
+    <div class="search-text">
+        SEARCH
+    </div>
+
+    <div class="search-content-header">
+        <form method="get">
+            {% csrf_token %}
+
+            {{myFilter.form.name}}
+            
+            {{myFilter.form.genre}}
+
+            {{myFilter.form.status}}
+
+            {{myFilter.form.rating}}
+            
+            <button class="search-content-btn" type="submit">
+                <i class="fa-solid fa-search search-content-icon"></i>
+            </button>
+        </form>
+    </div>
+
+    <!-- { % if myFilter.form.input.is_not_None %} -->
+    <div class="home-cards search-cards">
+        {% for anime in animeinfos %}
+
+        <div class="card">
+            <img class="img-i" src="/static/images/{{anime.image}}">
+            <p class="home-review-title first">
+                <a href="{% url 'lorem' anime.id %}">{{anime.name}}</a>
+            </p>
+            <div class="review">
+                <p class="home-review-title">
+                    <a href="{% url 'lorem' anime.id %}">{{anime.name}}</a>
+                </p>
+                <span class="review-pg">PG 18</span>
+                <div>
+                    <span class="review-pg">Rating: </span>
+                    <span class="home-review-star">&#x2B50;&#11088;&#11088;&#11088;</span>
+                    <span>{{anime.rating}}/5</span>
+                </div>
+            </div>
+        </div>
+
+
+        {% endfor %}
+    </div>
+    <!-- { % endif %} -->
+    
+    <script>
+        // FORM PLACEHOLDER
+        let input = document.getElementsByTagName('input')
+
+        input[1].placeholder = 'Name...'
+        input[2].placeholder = 'Genre...'
+
+    </script>
+    <script src="{% static '/js/main.js' %}"></script>
+</body>
+</html>

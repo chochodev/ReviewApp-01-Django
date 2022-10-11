@@ -1,0 +1,124 @@
+{% extends 'accounts/main.html' %} 
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static '/css/demon-slayer.css' %}">
+
+
+<div class="anime-comment">
+    <div class="head-sec">
+        <img src="/static{{anime.image.url}}">
+        <div>
+            <div><p>Title:</p>{{anime.name}}</div>
+            <div><p>Type:</p> TV</div>
+            <div><p>Studio:</p> Brain's Base</div>
+            <div><p>Date aired:</p>{{anime.date}}</div>
+            <div><p>Status:</p>{{anime.status}}</div>
+            <div><p>Genre:</p> {{anime.genre}}</div>
+            <div><p>Country:</p> Japan</div>
+            <div><p>Scores:</p> {{anime.rating}}/5 by  {{anime.review}} reviews</div>
+            <div><p>Premiered:</p> Summer 2018</div>
+            <div><p>Duration:</p> 24 min</div>
+            <div><p>Comments:</p> {{anime.review}}</div>
+            <div><p>Season:</p>{{anime.season}}</div>
+        </div>
+    </div>
+
+    <div class="comment-sec">
+        <div>
+            <form class="comment-form">
+                <textarea class="slider" placeholder="Your comment ..."></textarea>
+                <input type="email" placeholder="Email">
+                <input type="checkbox" required> <span>I agree with the <a href="#">Terms and Policy</a> governing commenting</span>
+                <button type="submit">Post</button>
+            </form>
+
+            <span>
+                <b>Terms governing comments: </b>
+                <p>Moderation rules
+                    We ask that all comments be brief, polite, on subject and legally sound.
+                    
+                    We welcome debate and dissent, but personal attacks (on authors, other users or any individual), persistent trolling and mindless abuse will not be tolerated.
+                    
+                    We acknowledge criticism of the content we publish, but will not allow deliberate or dishonest misrepresentation of anyone,... <a href="{% url 'terms' %}">Terms and Policy</a> <!--including the Royal Society, our Fellows or our staff to be published on our website.
+                    
+                    We will use the following guidelines to determine whether a comment should be published. We will not publish comments which:
+                    
+                     Are considered likely to disrupt, provoke, attack or offend others
+                    Are racist, sexist, homophobic, sexually explicit, abusive or otherwise objectionable
+                    Contain swear words or other language likely to offend
+                    Break the law or condone or encourage unlawful activity. This includes breach of copyright, libel, defamation and contempt of court
+                    Advertise products or services for profit or gain
+                    Are completely anonymous, or are seen to impersonate someone else
+                    Include someone else's personal data (such as contact details)
+                    Are written in anything other than English
+                    Describe or encourage activities which could endanger the safety or well-being of others
+                    Contain the same, or similar, content posted multiple times
+                    Are considered to be off-topic for the discussion
+                    Are inflammatory or written with the intention of disrupting the conversation
+                    We operate a moderation policy on this service. We reserve the right to refuse publication or remove a comment based on any of the above criteria.
+                    
+                    Please note that the Society’s decision about whether a comment should be published or removed is final. In most cases we are unable to enter into discussions about why a comment has been refused.
+                    
+                    Participants who seriously, persistently or willfully ignore the community guidelines or our terms and conditions will have their posting privileges withdrawn.--></p> 
+            </span>
+        </div>
+
+        <aside><b>Disclaimer: </b>All comments are based on individual point of view</aside>
+
+        <div class="comments">
+            <div>
+                <img class="comment-img" src="{% static '/images/img-vi.jpg' %}">
+                <div class="comment">
+                    <span>Lorem Name - <small>1week ago</small></span>
+                    <p>One Piece is really cheezy in the beginning then starts to get really interesting to mind blowing, my fav character is Zoro (we are kinda alike) lol.</p>
+                    <div class="btns">
+                        <ion-icon name="thumbs-up-outline"></ion-icon>
+                        <ion-icon name="thumbs-down-outline"></ion-icon>
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img class="comment-img" src="{% static '/images/img-ii.jpg' %}">
+                <div class="comment">
+                    <span>Lorem Name - <small>1week ago</small></span>
+                    <p>Demon Slayer is really violent, would recommend you don't show your kids. I really loved it. Can't wait for the next season.</p>
+                    <div class="btns">
+                        <ion-icon name="thumbs-up-outline"></ion-icon>
+                        <ion-icon name="thumbs-down-outline"></ion-icon>
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img class="comment-img" src="{% static '/images/img-iv.jpg' %}">
+                <div class="comment">
+                    <span>Lorem Name - <small>1week ago</small></span>
+                    <p>Nice!!!</p>
+                    <div class="btns">
+                        <ion-icon name="thumbs-up-outline"></ion-icon>
+                        <ion-icon name="thumbs-down-outline"></ion-icon>
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img class="comment-img" src="{% static '/images/img-iii.jpg' %}">
+                <div class="comment">
+                    <span>Lorem Name - <small>1week ago</small></span>
+                    <p>Gangster storyline is too plain, still has cool fight scenes tho...</p>
+                    <div class="btns">
+                        <ion-icon name="thumbs-up-outline"></ion-icon>
+                        <ion-icon name="thumbs-down-outline"></ion-icon>
+                        <ion-icon name="chatbubble-outline"></ion-icon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

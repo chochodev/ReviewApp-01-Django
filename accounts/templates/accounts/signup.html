@@ -1,0 +1,93 @@
+{% load static %} 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static '/css/signup.css' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome/css/all.css' %}">
+</head>
+<body class='slider'>
+    <!-- PRELOADER -->
+    <div class="preloader"></div>
+
+    <!-- WALLPAPER -->
+    <img class="wallpaper" src="{% static '/images/goku_wallpaper.jpg' %}">
+    <div>
+    
+        <div class="signup">
+            <div class="signup-text">
+                <h2>SIGN UP</h2>
+            </div>
+            <form class="signup-form" id="signup-form" method="POST">
+                {% csrf_token %}
+                <div class="input-sec">
+                    {{form.username}}
+                    {{form.email}}
+                    {{form.password1}}
+                    {{form.password2}}
+                    
+                    <i class="fa-solid fa-user" id="icon-i"></i>
+                    <i class="fa-solid fa-at" id="icon-ii"></i>
+                    <i class="fa-solid fa-key" id="icon-iii"></i>
+                    <i class="fa-solid fa-key" id="icon-iv"></i>
+                </div>
+
+                <div class="terms-prompt">
+                    <input required type="checkbox">
+                    <small>I agree with the <a href="{% url 'terms' %}">Terms and Policy</a>.</small>
+                </div>
+
+                <input type="submit">
+
+                <!-- FOR THE ERROR MESSAGES -->
+                    {{form.errors}}
+                
+
+                <div class="signin-prompt">
+                    <small>Already have an account? <a href="{% url 'signin' %}">Sign In</a> now</small>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+
+    <!-- SIGN UP CONTENT -->
+    
+
+    <script>
+        /* SIGNUP SIGNIN SWITCH */
+        let signup = document.querySelector('#signup-form')
+        let signin = document.querySelector('#signin-form')
+        
+         function SignIn(){
+            signup.style.display = 'none';
+            signin.style.display = 'flex'
+        }
+        function SignUp(){
+            signup.style.display = 'flex'
+            signin.style.display = 'none';
+        }
+
+        // FORM PLACEHOLDER
+        let input = document.getElementsByTagName('input')
+
+        input[1].placeholder = 'Username..'
+        input[2].placeholder = 'Email..'
+        input[3].placeholder = 'Password..'
+        input[4].placeholder = 'Confirm Password..'
+
+        /* PRELOADER */
+
+        let loader = document.querySelector('.preloader')
+
+        window.addEventListener('load', function(){
+            loader.style.display = 'none'
+        })
+        
+    </script>
+</body>
+</html>
