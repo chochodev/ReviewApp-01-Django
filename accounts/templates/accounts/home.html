@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReviewMe</title>
+    
+    <link rel="stylesheet" href="{% static '/css/home.css' %}">
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+</head>
+<body class="dark slider">
+    
+    <!-- PRELOADER SECTION -->
+    <div id="preloader"></div>
+
+    <!-- HOME PAGE CONTENT -->
+    <img src="/static/images/anime-i.jpg" class="home-bg-img">
+    <div class="home-show">
+        <img src="/static/images/luffy-i.png" class="home-show-img hsi-i">
+        <img src="/static/images/luffy-ii.png" class="home-show-img hsi-ii">
+        <img src="/static/images/zoro-i.png" class="home-show-img hsi-iii">
+    </div>
+    <div class="home">
+        <div class="home-body">
+            <div class="home-header">
+                <div class="logo">
+                    <h2>Review<span>Me</span></h2>
+                </div>
+
+                <form>
+                    <input type="search" placeholder="search">
+                    <button class="search-btn" type="submit">
+                        <ion-icon class="search-icon" name="search-outline"></ion-icon>
+                    </button>
+                </form>
+            </div>
+
+            <div class="home-div-a">
+                <a href="{% url 'home' %}" class="home-a">
+                    <span>Goto Homepage</span>
+                    <ion-icon name="arrow-forward-outline" class="arrow-forward-outline"></ion-icon>
+                </a>
+            </div>
+        </div>
+
+
+        <!-- HOME PAGE ABOUT US SECTION -->
+        <div class="home-about">
+            <div class="home-text">
+                <span>ReviewMe - ReviewMe is the best website to check up on latest news, updates and reviews of anime for free</span>
+
+                <p>
+                    Near the year 2018, after checking popular free anime review sites, we found most of the sites lacked quality user interface and did not provide a good user experience. So, our product development team created ReviewMe to provide anime fans with a better one.
+                </p>
+            </div>
+
+            <div class="home-text">
+                <span> 1. What's ReviewMe?</span>
+                <p>
+                    ReviewMe is an anime news site where you can check latest anime updates, news, ratings, ... of your favourite anime. You can also be a contributor and review anime without payment. Everything is free!
+                </p>
+            </div>
+            <div class="home-text">
+                <span> 2. Is ReviewMe legit?</span>
+                <p>
+                    Yes. We research all available anime and conduct seminars to people all over the country to get their opinion on any anime. We also review the contributions of our members before posting to make sure it's not rigged in any way.
+                </p>
+            </div>
+            <div class="home-text">
+                <span> 3. What's real ReviewMe?</span>
+                <p>
+                    There are many fake/clones of 9anime sites. These sites may collect your information without consent. Please make sure you use ccho.reviewme.com ( <a href="{% url 'home' %}">check here</a> ).
+                </p>
+            </div>
+            <div class="home-text">
+                <span> 4. What makes ReviewMe Unique?</span>
+                <p>
+                    - Content quantity: We update all our anime regularly and immediately post new updates.
+                </p>
+                <p>
+                    - Content quality: We make sure our reviews and news are from legit sources.
+                </p>
+                <p>
+                    User interface: We focus on the simple and easy to use, so you will feel the life is easier here. We also have almost every feature that other review sites don't.
+                </p>
+                <p>
+                    - Device compatibily: ReviewMe works fine on both desktop and mobile devices, even with old browsers.
+                </p>
+                <p>
+                    So, if you want legit updates on anime for free, give ReviewMe a try, and if you like what we provided, please help us by following us in our social media platforms and do not forget to bookmark our site.
+                </p>
+                <p>
+                    Thanks!
+                </p>
+            </div>
+        </div>
+
+        <div>
+            {% include 'accounts/footer.html' %}
+        </div>
+
+        
+        
+    </div>  
+
+            
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="{% static '/js/main.js' %}"></script>
+
+</body>
+</html>
+
+
+      
+

@@ -1,0 +1,188 @@
+{% extends 'accounts/main.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static '/css/home-content.css' %}">
+
+<div class="home-content">
+    <div class="home-display-body dark">
+        <section class="home-display-section">
+            <div class="home-display-slider">
+                <div class="home-display-slide">
+                    <input type="radio" name="radio-btn" id="radio1">
+                    <input type="radio" name="radio-btn" id="radio2">
+                    <input type="radio" name="radio-btn" id="radio3">
+                    <input type="radio" name="radio-btn" id="radio4">
+    
+
+                    {% for i in anime %}
+
+                    <div class="st first">
+                        <img src="{% static '/images/img-i.png' %}" alt="">
+                    
+                        <div class="home-card-info">
+                            <h2>{{i.name}}</h2>
+                            <div>
+                                <span>PG 18</span>
+                                <span class="home-review-star">&#x2B50;&#11088;&#11088;&#11088;</span>
+                                <span> {{i.rating}}/5 </span>
+                            </div>
+                            <p>
+                                {{i.description}}
+                            </p>
+    
+                            <a href="#">VIEW NOW</a>
+                        </div>
+                    </div>
+                    <div class="st">
+                        <img src="{% static '/images/img-v.jpg' %}" alt="">
+                    
+                        <div class="home-card-info">
+                            <h2>{{i.name}}</h2>
+                            <div>
+                                <span>PG 13</span>
+                                <span class="home-review-star">&#x2B50;&#11088;&#11088;&#11088;</span>
+                                <span> {{i.rating}}/5 </span>
+                            </div>
+                            <p>
+                                {{i.description}} 
+                            </p>
+    
+                            <a href="#">VIEW NOW</a>
+                        </div>
+                    </div>
+                    <div class="st">
+                        <img src="{% static '/images/img-viii.jpg' %}" alt="">
+                    
+                        <div class="home-card-info">
+                            <h2>{{i.name}}</h2>
+                            <div>
+                                <span>PG 13</span>
+                                <span class="home-review-star">&#x2B50;&#11088;&#11088;&#11088;</span>
+                                <span> {{i.rating}}/5 </span>
+                            </div>
+                            <p>
+                                {{i.description}}
+                            </p>
+    
+                            <a href="#">VIEW NOW</a>
+                        </div>
+                    </div>
+                    <div class="st">
+                        <img src="{% static '/images/img-xii.jpg' %}" alt="">
+                    
+                        <div class="home-card-info">
+                            <h2>{{i.name}}</h2>
+                            <div>
+                                <span>PG 18</span>
+                                <span class="home-review-star">&#x2B50;&#11088;&#11088;&#11088;</span>
+                                <span> {{i.rating}}/5 </span>
+                            </div>
+                            <p>
+                                {{i.description}}
+                            </p>
+    
+                            <a href="#">VIEW NOW</a>
+                        </div>
+                    </div>
+
+                    {% endfor %}
+    
+                    <div class="nav-auto">
+                        <div class="a-b1"></div>
+                        <div class="a-b2"></div>
+                        <div class="a-b3"></div>
+                        <div class="a-b4"></div>
+                    </div>
+                </div>
+    
+                <div class="nav-m">
+                    <label for="radio1" class="m-btn"></label>
+                    <label for="radio2" class="m-btn"></label>
+                    <label for="radio3" class="m-btn"></label>
+                    <label for="radio4" class="m-btn"></label>
+                </div>
+            </div>
+        </section>
+    
+        <script>
+            var counter = 1;
+            setInterval(function(){
+                document.getElementById('radio' + counter).checked = true;
+                counter++;
+                if(counter > 4){
+                    counter = 1;
+                }
+            }, 5000)
+        </script>
+    </div>
+
+    <div class="home-title">
+        <p>
+            Welcome to ReviewMe Home Page. Sign up/Sign in to get full access to our services ( updates, news, reviews on anime ).
+        </p>
+
+        <h2>Anime updates and reviews</h2>
+    </div>
+
+    <div class="home-main-content">
+        <div class="home-cards-title">Recently Updated</div>
+        
+
+
+        <div class="home-cards">
+            {% for i in anime %}
+            
+                <div class="card">
+                    <img class="img-i" src="/static/images/{{i.image}}">
+                    <p class="home-review-title first">
+                        <a href="{% url 'lorem' i.id %}">{{i.name}}</a>
+                    </p>
+                    <div class="review">
+                        <p class="home-review-title">
+                            <a href="{% url 'lorem' i.id %}">{{i.name}}</a>
+                        </p>
+                        <span class="review-pg">PG 18</span>
+                        <div>
+                            <span class="home-review-star">&#x2B50;&#11088;&#11088;&#11088;</span>
+                            <span class="review-pg">{{i.rating}}/5</span>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+        <div class="home-cards-title">Top Search</div>
+        
+        <div class="home-cards">
+            {% for i in anime %}
+
+                <div class="card">
+                    <img class="img-i" src="/static/images/{{i.image}}">
+                    <p class="home-review-title first">
+                        <a href="{% url 'lorem' i.id %}">{{i.name}}</a>
+                    </p>
+                    <div class="review">
+                        <p class="home-review-title">
+                            <a href="{% url 'lorem' i.id %}">{{i.name}}</a>
+                        </p>
+                        <span class="review-pg">PG 18</span>
+                        <div>
+                            <span class="home-review-star">&#x2B50;&#11088;&#11088;&#11088;</span>
+                            <span class="review-pg">{{i.rating}}/5</span>
+                        </div>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div></div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Patrick+Hand&display=swap');
+
+
+*{
+    outline: none;
+    border: none;
+    background: transparent;
+    text-decoration: none;
+    font-family: 'Varela Round', sans-serif;
+    color: #fff;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+/* SLIDER */
+.slider::-webkit-scrollbar-thumb{
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #4c4c4c;
+    border: 1px solid #cccccc;
+}
+
+.slider::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.slider::-webkit-scrollbar-track{
+    background-color: #cccccc;
+    border-radius: 10px;
+
+} 
+
+.slider{
+    user-select: none;
+}
+
+/* BODY */
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+body > div{
+    width: min-content;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    margin: 10px 0;
+}
+
+/* WALLPAPER */
+.wallpaper{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* PRELOADER */
+
+#preloader{
+    background: #000 url('/static/images/preloader.gif') no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 101;
+}
+
+/* SIGN UP CONTENT */
+
+.signup{
+    height: max-content;
+    width: max-content;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    padding: 10px;
+}
+/* 
+.logo-text{
+    margin: 0 0 20px 0;
+    font-size: 45px;
+    color: #242526;
+    text-shadow: 
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px -1px 0 #fff;
+    font-weight: bolder;
+    font-family: 'Lobster', cursive;
+} */
+
+.signup .signup-text{
+    width: min-content;
+    margin: 0 auto;
+    color: #f0f0f0;
+    font-weight: bolder;
+    white-space: nowrap;
+}
+
+.signup-form{
+    width: 100%;
+    max-width: 500px;
+    height: min-content;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0 10px;
+    border-radius: 10px;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.signup-form .input-sec{
+    padding: 0 10px;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
+}
+
+.signup-form .input-sec input{
+    position: relative;
+    width: 100%;
+}
+
+.signup-form .input-sec i{
+    position: absolute;
+    left: 15px;
+    color: #909090;
+    font-size: 1.1em;
+}
+
+.signup-form .input-sec #icon-i{
+    top: 10px;
+}
+.signup-form .input-sec #icon-ii{
+    top: 56px;
+}
+.signup-form .input-sec #icon-iii{
+    top: 102px;
+}
+.signup-form .input-sec #icon-iv{
+    top: 146px;
+}
+
+.signup-form .input-sec input:not(input[type=submit]){
+    width: min-content;
+    height: 35px;
+    outline: none;
+    margin: 5px auto;
+    padding: 0 0 0 30px;
+    background: transparent;
+    font-size: 18px;
+    border-bottom: 1px solid #919191;
+}
+
+.signup-form .terms-prompt{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    margin: 0 0 5px 0;
+    gap: 5px;
+}
+
+.signup-form input[type=submit]{
+    width: 100%;
+    height: 28px;
+    border-radius: 5px;
+    background: #4d5bf9;
+    color: #f0f0f0;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.signup-form small{
+    color: #fff;
+}
+
+.signup-form a{
+    color: #2b8eff;
+}
+
+/* ERROR MESSAGE */
+.errorlist{
+    padding: 0;
+    margin: 0 auto;
+    list-style: none;
+    max-width: 250px;
+    text-align: center;
+    white-space: normal;
+    font-size: 0;
+}
+
+.errorlist ul > li{
+    font-size: 15px;
+    text-transform: capitalize;
+    color: #f89393;
+    font-family: monospace;
+}
+
+@media (max-width: 480px){
+    .signup-form{
+        padding: 0 5px;
+    }
+    .signup-form .input-sec input:not(input[type=submit]){
+        font-size: 15px;
+        padding: 0 0 0 25px;
+    }
+    .signup-form .input-sec i{
+        font-size: 0.9em;
+    }
+    .signup-form .input-sec #icon-i{
+        top: 13px;
+    }
+    .signup-form .input-sec #icon-ii{
+        top: 59px;
+    }
+    .signup-form .input-sec #icon-iii{
+        top: 104px;
+    }
+    .signup-form .input-sec #icon-iv{
+        top: 148px;
+    }
+    .signup-form input[type=submit]{
+        width: 100px;
+        margin: 0 auto;
+    }
+}

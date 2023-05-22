@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Patrick+Hand&display=swap');
+
+:root{
+    --light-body: #e7e7e7;
+    --light-main: #4d5bf9;
+    --light-second: #ff4d89;
+    --light-text: #000;
+    --light-text-i: #000;
+    --light-hover: gray;
+    --light-btn: #2b8eff;
+
+    --dark-body: #242424;
+    --dark-main: #343434;
+    --dark-second: #242526;
+    --dark-text: #4d5bf9;
+    --dark-text-i: #f0f0f0;
+    --dark-hover: #1f1f1f;
+    --dark-btn: #ff4d89;
+
+    --shadow: 2px -5px 2px -3px rgba(0,0,0,0.25), 2px -5px 2px -3px rgba(0,0,0,0.25), 2px -5px 2px -3px rgba(0,0,0,0.25);
+    --shadow-ii: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    --shadow-i: -1px 1px 4px -1px rgba(0,0,0,0.27), -1px 1px 4px -1px rgba(0,0,0,0.27), -1px 1px 4px -1px rgba(0,0,0,0.27);
+
+    --font-main: 'Varela Round', sans-serif;
+    --font-i: 'Acme', sans-serif;
+    --font-ii: 'Lobster', cursive;
+    --font-logo: 'Patrick Hand', cursive;
+}
+
+.light{
+    --bg-body: var(--light-body);
+    --bg-main: var(--light-main);
+    --bg-second: var(--light-second);
+    --bg-text: var(--light-text);
+    --bg-text-i: var(--light-text-i);
+    --bg-hover: var(--light-hover);
+    --bg-btn: var(--light-btn);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    text-decoration: none;
+    color: var(--bg-text-i) !important;
+    user-select: auto;
+}
+
+*::selection{
+    background: #7a7676;
+    color: #cccccc;
+}
+
+/* SCROLL SECTION */
+
+.scroll-btn{
+    width: min-content;
+    height: min-content;
+    position: fixed;
+    z-index: 200;
+    bottom: 4%;
+    right: 3%;
+    padding: 5px;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.scroll-btn #scroll-up, 
+.scroll-btn #scroll-down{
+    font-size: 1em;
+    height: 30px;
+    min-width: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 5px;
+    margin-bottom: 5px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #989898;
+    color: #f0f0f0;
+    opacity: .7;
+}
+
+.scroll-btn button{
+    width: max-content;
+    margin: 0 auto;
+    padding: 6px 5px;
+    border-radius: 5px;
+    background: #989898;
+    color: #f0f0f0;
+    font-size: 11px;
+    font-weight: 600;
+    display: none;
+    box-shadow: var(--shadow-i);
+}
+
+.scroll-btn button:active{
+    background: #989898dc;
+}
+
+.scroll-btn #scroll-up.scroll-active, 
+.scroll-btn #scroll-down.scroll-active{
+    display: flex;
+    animation: scroll .3s ease-in-out;
+}
+
+/* SLIDER */
+
+.slider::-webkit-scrollbar-thumb{
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #4c4c4c;
+    border: 1px solid #cccccc;
+}
+
+.slider::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.slider::-webkit-scrollbar-track{
+    background-color: #cccccc;
+    border-radius: 10px;
+
+} 
+
+/* TERMS BODY */
+
+body{
+    background: var(--bg-body);
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+}
+
+body h2{
+    width: max-content;
+    margin: 0 auto;
+    padding: 10px 0 0 0;
+}
+
+body section{
+    padding: 10px;
+}
+
+body section h3{
+    opacity: .9;
+    user-select: none;
+}
+
+body section p{
+    opacity: .8;
+    font-size: 14px;
+    padding: 5px 0 0 5%;
+    user-select: auto !important;
+}
+
+/* TERMS FOOTER */
+#terms-footer{
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    z-index: 100;
+}

@@ -1,0 +1,53 @@
+{% load static %} 
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    
+    <link rel="stylesheet" href="{% static '/css/user.css' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome/css/all.css' %}">
+
+</head>
+
+<body class="light slider body" id="body">
+    
+    <!-- PRELOADER SECTION -->
+    <div id="preloader"></div>
+
+    <!-- SAVE BUTTON -->
+    <div id="user-save" onclick="history.back()">
+        <a href="{% url 'home' %}">Save</a>
+    </div>
+
+    <!-- USER UPDATE CARD -->
+    <div id="user-page">
+        <h3>{{user}}</h3>
+        <div id="profile">
+            <img src="{{request.user.customer.profile_pic.url}}">
+
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %} 
+                
+                {{form}}
+                
+                <input onclick="history.back()" type="submit" name="Update Information">
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        /* PRELOADER */
+
+        let loader = document.querySelector('#preloader')
+
+        window.addEventListener('load', function(){
+            loader.style.display = 'none'
+        })
+    </script>
+</body>
+</html>

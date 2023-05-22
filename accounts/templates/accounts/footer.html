@@ -1,0 +1,50 @@
+{% load static %} 
+
+<link rel="stylesheet" href="{% static '/css/footer.css' %}">
+
+<div class="footer">
+    <div class="footer-body">
+        <div class="feet feet-one">
+            <span class="footer-title">Company</span>
+            <div class="feet_col">
+                <a href="#">About us</a>
+                <a href="#">Contact us</a>
+                <a href="#">Contribute</a>
+            </div>
+        </div>
+
+        <div class="feet feet-two">
+            <span class="footer-title">Further Information</span>
+            <div class="feet_col">
+                <a href="{% url 'terms' %}">Privacy Policy</a>
+                <a href="{% url 'terms' %}">Terms and Conditions</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+
+        <div class="feet feet-three">
+            <span class="footer-title">Follow us</span>
+            <div class="icon-div">
+                <span>
+                    <ion-icon class="footer-icon fb" name="logo-facebook"></ion-icon>
+                </span>
+                <span>
+                    <ion-icon class="footer-icon ig" name="logo-instagram"></ion-icon>
+                </span>
+                <span>
+                    <ion-icon class="footer-icon tw" name="logo-twitter"></ion-icon>
+                </span>
+                <span>
+                    <ion-icon class="footer-icon git" name="logo-github"></ion-icon>
+                </span>
+            </div>
+        </div>
+
+        <div class="feet feet-four">
+            <form class="footer-form">
+                <input type="email" placeholder="Suscribe to our newsletter">
+                <input type="submit" name="Suscribe">
+            </form>
+        </div>
+    </div>
+</div>

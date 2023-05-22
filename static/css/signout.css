@@ -1,0 +1,55 @@
+.signout-prompt{
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: url("/static/images/goku_wallpaper.jpg") no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    overflow: hidden;
+    opacity: .9;
+}
+
+.signout-prompt-show{
+    z-index: 202;
+    display: flex;
+}
+  
+
+.signout-prompt > div{
+    width: 350px;
+    max-width: 80vw;
+    height: max-content;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    color: #f0f0f0;
+    font-weight: 600;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+}
+
+.signout-prompt span:nth-child(2){
+    display: flex;
+    justify-content: space-evenly;
+    gap: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.signout-prompt span:nth-child(2) a{
+    width: max-content;
+    background: #ccccccb6;
+    padding: 2px 5px;
+    border-radius: 5px;
+}

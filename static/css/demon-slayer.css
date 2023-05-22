@@ -1,0 +1,223 @@
+.anime-comment{
+    background: var(--bg-body);
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 80px);
+    padding: 20px 0 0 80px;
+    height: 100%;
+}
+
+/* HEAD SECTION */
+
+.anime-comment .head-sec{
+    display: flex;
+    width: 100%;
+}
+
+.anime-comment .head-sec img{
+    width: 100%;
+    max-width: 76vw;
+    max-height: 500px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.anime-comment .head-sec div{
+    color: var(--bg-text-i);
+    padding-top: 5px;
+    padding-left: 5px;
+    font-size: 13px;
+    font-weight: 600;
+
+}
+
+.anime-comment .head-sec div p{
+    opacity: .5;
+    font-weight: 500;
+}
+
+/* COMMENT SECTION */
+
+.anime-comment .comment-sec{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.anime-comment .comment-sec div{
+    display: flex;
+}
+
+/* COMMENT SECTION - FORM AREA */
+
+.anime-comment .comment-sec .comment-form{
+    display: flex;
+    height: min-content;
+    width: 100vw;
+    max-width: 500px;
+    flex-direction: column;
+    gap: 5px;
+    position: relative;
+    margin: 20px auto;
+}
+
+.anime-comment .comment-sec .comment-form textarea{
+    border-radius: 5px;
+    height: 50px;
+    resize: none;
+    outline: none;
+    padding: 5px;
+}
+
+.anime-comment .comment-sec .comment-form input[type=email]{
+    padding: 2px;
+    border-radius: 5px;
+    height: 30px;
+    outline: none;
+}
+
+.anime-comment .comment-sec .comment-form input[type=checkbox]{
+    position: absolute;
+    left: 0;
+    top: 104px;
+}
+
+.anime-comment .comment-sec .comment-form span{
+    width: 100%;
+    padding-left: 18px;
+    font-size: 12px;
+    color: var(--bg-text-i);
+    filter: brightness(80%);
+}
+
+.anime-comment .comment-sec .comment-form a{
+    color: #4d5bf9;
+    text-decoration: none;
+}
+
+.anime-comment .comment-sec .comment-form button{
+    width: 80px;
+    height: 25px;
+    background: #4d5bf9;
+    color: #f0f0f0;
+    font-size: 17px;
+    border-radius: 5px;
+}
+
+/* FORM AREA - TERMS */
+
+.anime-comment .comment-sec div span{
+    max-width: 520px;
+    margin: 15px auto 0;
+}
+
+.anime-comment span{
+    width: 100%;
+    color: var(--bg-text-i);
+    padding: 0 10px;
+    filter: brightness(60%);
+}
+
+.anime-comment span p{
+    font-size: 12px;
+    padding: 5px 0 0 0;
+}
+
+/* COMMENT SECTION - DISCLAIMER TEXT */
+
+.anime-comment aside{
+    font-size: 12px;
+    color: var(--bg-text-i);
+    font-family: monospace;
+    filter: brightness(60%);
+    margin: 10px 0;
+}
+
+.anime-comment aside b{
+    color: #c5a033;
+}
+
+/* COMMENT AREA - COMMENTS */
+
+.anime-comment .comments{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.anime-comment .comments div{
+    display: flex;
+    border-radius: 10px;
+    align-items: flex-start;
+    height: min-content;
+}
+
+.comment-sec .comments div .comment-img{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 25%;
+    padding: 5px;
+}
+
+.anime-comment .comment{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+    color: var(--bg-text-i);
+}
+
+.anime-comment .comment span{
+    color: #2b8eff;
+    font-size: 12px;
+}
+
+.anime-comment .comment p{
+    filter: brightness(80%);
+    font-size: 11px;
+    padding: 0 10px;
+}
+
+.anime-comment .btns{
+    width: 120px;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px;
+}
+
+.anime-comment .btns *{
+    cursor: pointer;
+}
+
+/* TCH MENDOKUSAI */
+
+
+@media (max-width: 768px){
+        
+    .anime-comment .head-sec{
+        flex-direction: column;
+    }
+    .anime-comment .head-sec img{
+        max-width: 80vw;
+    }
+    .anime-comment .head-sec div{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 140px));
+        /* display: flex; */
+        white-space: normal;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .anime-comment .comment-sec > div{
+        flex-direction: column;
+    }
+    .anime-comment .comment-sec .comment-form{
+        margin: 10px auto 0;
+    }
+    .anime-comment .comment-form div span{
+        margin: 0 auto;
+    }
+    .anime-comment .comment-sec .comment-form{
+        width: 100%;
+    }
+}

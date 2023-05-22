@@ -1,0 +1,312 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Patrick+Hand&display=swap');
+
+:root{
+    --light-body: #e7e7e7;
+    --light-main: #4d5bf9;
+    --light-second: #ff4d89;
+    --light-text: #000;
+    --light-text-i: #000;
+    --light-hover: gray;
+    --light-btn: #2b8eff;
+
+    --dark-body: #242424;
+    --dark-main: #343434;
+    --dark-second: #242526;
+    --dark-text: #4d5bf9;
+    --dark-text-i: #f0f0f0;
+    --dark-hover: #1f1f1f;
+    --dark-btn: #ff4d89;
+
+    --shadow: 2px -5px 2px -3px rgba(0,0,0,0.25), 2px -5px 2px -3px rgba(0,0,0,0.25), 2px -5px 2px -3px rgba(0,0,0,0.25);
+    --shadow-ii: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    --shadow-i: -1px 1px 4px -1px rgba(0,0,0,0.27), -1px 1px 4px -1px rgba(0,0,0,0.27), -1px 1px 4px -1px rgba(0,0,0,0.27);
+
+    --font-main: 'Varela Round', sans-serif;
+    --font-i: 'Acme', sans-serif;
+    --font-ii: 'Lobster', cursive;
+    --font-logo: 'Patrick Hand', cursive;
+}
+
+.light{
+    --bg-body: var(--light-body);
+    --bg-main: var(--light-main);
+    --bg-second: var(--light-second);
+    --bg-text: var(--light-text);
+    --bg-text-i: var(--light-text-i);
+    --bg-hover: var(--light-hover);
+    --bg-btn: var(--light-btn);
+}
+
+.dark{
+    --bg-body: var(--dark-body);
+    --bg-main: var(--dark-main);
+    --bg-second: var(--dark-second);
+    --bg-text: var(--dark-text);
+    --bg-text-i: var(--dark-text-i);
+    --bg-hover: var(--dark-hover);
+    --bg-btn: var(--dark-btn);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    text-decoration: none;
+}
+
+*::selection{
+    background: #7a7676;
+}
+
+#body{
+    background-color: var(--bg-body);
+}
+
+
+/* PRELOADER SECTION */
+
+#preloader{
+    background: #000 url("/static/images/preloader.gif") no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 101;
+}
+
+/* SCROLL SECTION */
+
+.scroll-btn{
+    width: min-content;
+    height: min-content;
+    position: fixed;
+    z-index: 200;
+    bottom: 4%;
+    right: 3%;
+    padding: 5px;
+    grid-template-rows: repeat(3, 1fr);
+    gap: 5px;
+}
+
+.scroll-btn #scroll-up, 
+.scroll-btn #scroll-down{
+    font-size: 1em;
+    height: 30px;
+    min-width: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 5px;
+    margin-bottom: 5px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: #989898;
+    color: #f0f0f0;
+    opacity: .7;
+}
+
+.scroll-btn button{
+    width: max-content;
+    margin: 0 auto;
+    padding: 6px 5px;
+    border-radius: 5px;
+    background: #989898;
+    color: #f0f0f0;
+    font-size: 11px;
+    font-weight: 600;
+    display: none;
+    box-shadow: var(--shadow-i);
+}
+
+.scroll-btn button:active{
+    background: #989898dc;
+}
+
+.scroll-btn #scroll-up.scroll-active, 
+.scroll-btn #scroll-down.scroll-active{
+    display: flex;
+    animation: scroll .3s ease-in-out;
+}
+
+/* SLIDER */
+
+.slider::-webkit-scrollbar-thumb{
+    width: 8px;
+    height: 8px;
+    border-radius: 10px;
+    background-color: #4c4c4c;
+    border: 1px solid #cccccc;
+}
+
+.slider::-webkit-scrollbar{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.slider::-webkit-scrollbar-track{
+    background-color: #cccccc;
+    border-radius: 10px;
+
+} 
+
+
+/* HOME CONTENT */
+
+.home-content{
+    height: 100%;
+    width: calc(100vw - 70px);
+    background: transparent;
+    transform: translateX(70px, 80px);
+}
+
+.home-content-body{
+    display: flex;
+    flex-direction: column;
+}
+
+.home-content-header{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    max-height: 80px;
+    margin: 20px 0 0 80px;
+}
+
+/* SEARCH-CONTENT BUTTON */
+
+.home-content-header form{
+    display: flex;
+    height: 100%;
+}
+
+.home-content-header input{
+    background: #f0f0f0;
+    width: 100%;
+    height: 40px;
+    padding: 0 2vw;
+    border-radius: 20px;
+    outline: none;
+    font-size: 18px;
+    border: 1px solid #a3a3a3;
+}
+
+.home-content-header input:focus{
+    box-shadow: var(--shadow-i);
+}
+
+.search-content-btn{
+    border-radius: 20px;
+    min-width: 40px !important;
+    width: 40px !important;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #4d5bf9;
+}
+
+.search-content-icon{
+    color: #f0f0f0;
+}
+
+
+/* LOGO SECTION */
+.logo-text{
+    width: max-content;
+    margin: 0 auto;
+    font-size: 35px;
+    color: #242526;
+    text-shadow: 
+        -1px 1px 0 #fff,
+        1px 1px 0 #fff,
+        1px -1px 0 #fff,
+        -1px -1px 0 #fff;
+    font-weight: bolder;
+    font-family: 'Patrick Hand', cursive;
+}
+
+
+/* FOR SETTINGS */
+
+.main-settings{
+    display: none;
+}
+
+.settings-show{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 102;
+    overflow: hidden;
+}
+
+/* FOR FOOTER */
+
+.main-footer{
+    position: relative;
+    bottom: 0;
+    z-index: 100;
+}
+
+/* FOR SCR0LL BUTTON */
+
+@keyframes scroll{
+    0%{
+        transform: translateY(20px) scale(0.6);
+        opacity: 0;
+    }
+    25%{
+        transform: translateY(10px) scale(0.8);
+    }
+    55%{
+        transform: translateY(5px) scale(1);
+        opacity: .5;
+    }
+    100%{
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px){
+    .home-content-header{
+        display: flex;
+        flex-direction: column-reverse;
+        margin-right: 0;
+        margin: 5px 0 0 0;
+    }
+
+    .home-content form{
+        align-items: center;
+    }
+
+    .home-content-header input{
+        width: 42vw;
+        height: 30px;
+    }
+
+    .search-content-btn{
+        width: 30px;
+        height: 30px;
+    }
+
+    .logo-text{
+        font-size: 28px;
+    }
+    
+    .home-content{
+        width: calc(100vw - 30px);
+        background: transparent;
+        transform: translateX(20px, 50px);
+    }
+}

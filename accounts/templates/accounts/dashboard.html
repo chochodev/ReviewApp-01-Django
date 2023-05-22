@@ -1,0 +1,100 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="{% static '/css/dashboard.css' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome/css/all.css' %}">
+
+</head>
+<body class="slider">
+    <div class="dashboard">
+        <form id="dashboard-search" method="get">
+            <h2>Search..</h2>
+            <div id="search-form">
+                
+                {{myFilter.form.name}}
+                {{myFilter.form.genre}}
+                {{myFilter.form.date_aired}}
+
+            </div>
+            <button type="submit">Search</button>
+        </form>
+            
+        <a id="create-anime" href="{% url 'createanime' %}">
+            Add
+            <i class="fa-solid fa-add"></i>
+        </a>
+
+        <div>
+            <table class="dashboard-table">
+                <tr class="table-head">
+                    <th>Name</th>
+                    <th>Genre</th>
+                    <th>Status</th>
+                    <th>Season</th>
+                    <th class="tr-delete">
+                        <i class="fa-solid fa-times"></i>
+                    </th>
+                </tr>
+
+                {% for anime_ in anime %}
+
+                <tr>
+                    <td><a class="name" href="{% url 'updateanime' anime_.id %}">{{anime_.name}}</a></td>
+                    <td>{{anime_.genre}}</td>
+                    <td>{{anime_.status}}</td>
+                    <td class="season">{{anime_.season}}</td>
+                    <td>
+                        <a class="delete" href="{% url 'deleteanime' anime_.id %}">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <div id="customer-info">
+            <h4>Total customers: {{total_customers}}</h4>
+            <h4>Total animes: {{total_animes}}</h4>
+        </div>
+
+        <div class="dashboard-card">
+            <h2>Contact Information</h2>
+            
+            <div>
+                {% for customer in customers %}
+
+                    <div class="customer-card">
+                        <span>Name: <span class="customer-data">{{customer.name}}</span></span>
+                        <span>Email: <span class="customer-data">{{customer.email}}</span></span>
+                    </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // FORM PLACEHOLDER
+        let input = document.getElementsByTagName('input')
+
+        input[0].placeholder = 'Name...'
+        input[1].placeholder = 'Genre...'
+        input[2].placeholder = 'Date...'
+        /* PRELOADER */
+
+        // let loader = document.querySelector('#preloader')
+
+        // window.addEventListener('load', function(){
+        //     loader.style.display = 'none'
+        // })
+    </script>
+
+</body>
+</html>

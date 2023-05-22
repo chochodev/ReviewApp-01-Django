@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Patrick+Hand&display=swap');
+
+:root{
+    --light-body: #e7e7e7;
+    --light-main: #4d5bf9;
+    --light-second: #ff4d89;
+    --light-text: #000;
+    --light-text-i: #000;
+    --light-hover: gray;
+    --light-btn: #2b8eff;
+
+    --dark-body: #242424;
+    --dark-main: #343434;
+    --dark-second: #242526;
+    --dark-text: #4d5bf9;
+    --dark-text-i: #f0f0f0;
+    --dark-hover: #1f1f1f;
+    --dark-btn: #ff4d89;
+
+    --shadow: 2px -5px 2px -3px rgba(0,0,0,0.25), 2px -5px 2px -3px rgba(0,0,0,0.25), 2px -5px 2px -3px rgba(0,0,0,0.25);
+    --shadow-ii: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+    --shadow-i: -1px 1px 4px -1px rgba(0,0,0,0.27), -1px 1px 4px -1px rgba(0,0,0,0.27), -1px 1px 4px -1px rgba(0,0,0,0.27);
+
+    --font-main: 'Varela Round', sans-serif;
+    --font-i: 'Acme', sans-serif;
+    --font-ii: 'Lobster', cursive;
+    --font-logo: 'Patrick Hand', cursive;
+}
+
+.light{
+    --bg-body: var(--light-body);
+    --bg-main: var(--light-main);
+    --bg-second: var(--light-second);
+    --bg-text: var(--light-text);
+    --bg-text-i: var(--light-text-i);
+    --bg-hover: var(--light-hover);
+    --bg-btn: var(--light-btn);
+}
+
+.dark{
+    --bg-body: var(--dark-body);
+    --bg-main: var(--dark-main);
+    --bg-second: var(--dark-second);
+    --bg-text: var(--dark-text);
+    --bg-text-i: var(--dark-text-i);
+    --bg-hover: var(--dark-hover);
+    --bg-btn: var(--dark-btn);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Varela Round', sans-serif;
+    border: none;
+    text-decoration: none;
+}
+
+*::selection{
+    background: #7a7676;
+    color: #cccccc;
+}
+
+/* PRELOADER SECTION */
+#preloader{
+    background: #000 url("/static/images/preloader.gif") no-repeat center center;
+    background-size: 15%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 101;
+}
+
+
+#body{
+    background-color: var(--bg-body);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#user-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: max-content;
+    height: max-content;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+/* SAVE BUTTON */
+#user-save{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    height: 25px;
+    width: 60px;
+    border-radius: 10px;
+    background: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    box-shadow: var(--shadow-i);
+}
+
+#user-save a{
+    color: var(--bg-main);
+    font-weight: 600;
+}
+
+
+/* USER PAGE */
+#user-page h3{
+    width: max-content;
+    margin: 0 auto;
+    text-transform: capitalize;
+    color: var(--bg-text-i);
+    padding: 20px 0;
+}
+
+#user-page #profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+}
+
+#user-page #profile img{
+    width: 250px;
+    height: 300px;
+    object-fit: cover;
+    object-position: center -10px;
+    border-radius: 2px;
+    box-shadow: var(--shadow-i);
+    margin: 0 auto;
+}
+
+#user-page #profile form{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    padding: 0 10px;
+    font-size: 0;
+    margin: 10px 0 0 0;
+}
+
+#profile form label{
+    color: var(--bg-text-i);
+    opacity: .8;
+    font-size: 14px;
+}
+
+#profile form input{
+    width: calc(100% - 30px);
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 0 auto;
+    margin-right: 0;
+    font-size: 16px;
+    outline: none;
+    border: none;
+}
+#profile form input:hover{
+    background: #f5f5f5;
+}
+#profile form input:focus{
+    box-shadow: var(--shadow-i);
+}
+
+input[type=checkbox],
+#profile form a,
+label[for=id_profile_pic],
+label[for=profile_pic-clear_id]{
+    display: none;
+}
+
+#profile form input[type=file]{
+    margin: 10px 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+#profile form input[type=submit]{
+    width: 100%;
+    margin: 10px auto;
+    background: #4d5bf9;
+    color: #f0f0f0;
+
+}
+
+@media (min-width: 640px){
+    #user-page #profile{
+        flex-direction: row;
+        width: 100%;
+        padding: 0 20px 20px 30px;
+    }
+}
+
+@media (max-width: 480px){
+    #user-page #profile img{
+        width: 220px;
+        height: 250px;
+    }
+    #profile form{
+        padding: 0;
+    }
+    #profile form input{
+        transform: scale(.9);
+    }
+    #profile form label{
+        width: max-content;
+    }
+    #profile form input[type=submit]{
+        margin-bottom: 50px;
+    }
+}

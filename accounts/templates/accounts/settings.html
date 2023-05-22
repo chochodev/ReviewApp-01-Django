@@ -1,0 +1,196 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>   
+
+    <link rel="stylesheet" href="{% static '/css/main.css' %}">
+
+    <link rel="stylesheet" href="{% static '/css/setting.css' %}">
+    <link rel="stylesheet" href="{% static '/fontawesome/css/all.css' %}">
+    
+</head>
+<body class="light slider body" id="body">
+
+    <!-- SCROLL BUTTON -->
+    <div class="scroll-btn">
+        <i class="fa-solid fa-chevron-up" id="scroll-up" onclick="topFunction()"></i>
+        <i class="fa-solid fa-chevron-down" id="scroll-down" onclick="downFunction()"></i>
+        <button id="scroll-btn" onclick="showScroll()">GoTo</button>
+    </div>
+
+  
+<div class="settings-body">
+    <!-- <img class="wallpaper" src="{% static '/images/goku_wallpaper.jpg' %}"> -->
+
+    <div id="save-settings" onclick="history.back()">
+        <p>save</p>
+    </div>
+    
+
+    <div class="settings">
+        <div class="settings-page">
+            <div id="settings-text">
+                SETTINGS
+            </div>
+
+            <div class="display-settings">
+                <h3>Display Settings</h3>
+                <details class="settings-details">
+                    <summary class="settings-name">
+                        <span><i class="fa-solid fa-moon"></i>Dark Mode</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </summary>
+                    <div class="settings-btn">
+                        <div>
+                            <span class="darkmode-on">ON</span>
+                            <span class="darkmode-off">OFF</span>
+                                
+                            <div class="darkmode-btn" id="toggle-display">
+                                <div class="darkmode-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <div class="display-settings">
+                <h3>Notification Settings</h3>
+                <details class="settings-details">
+                    <summary class="settings-name">
+                        <span><i class="fa-solid fa-message"></i>Suscribe to our Newsletter</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </summary>
+                    <div class="settings-btn">
+                        <p>Suscribe to our newsletter to get the latest anime and top anime in review first hand in your Email. Check spam folder if you can't find our news in your mail after enabling this</p>
+
+                        <div>
+                            <span class="notification-on">ON</span>
+                            <span class="notification-off">OFF</span>
+                                
+                            <div class="notification-btn" id="toggle-notification">
+                                <div class="notification-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </details>
+            </div>
+
+            <div class="display-settings">
+                <h3>Cookie Settings</h3>
+                <details class="settings-details">
+                    <summary class="settings-name">
+                        <span><i class="fa-solid fa-cookie"></i>Allow Cookies</span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </summary>
+                    <div class="settings-btn">
+                        <p>We use cookie to improve your experience and nothing more. We recommend you enable this</p>
+
+                        <div>
+                            <span class="cookie-on">ON</span>
+                            <span class="cookie-off">OFF</span>
+                                
+                            <div class="cookie-btn" id="toggle-cookie">
+                                <div class="cookie-slider"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </details>
+            </div>
+        </div>
+
+
+        <div class="settings-page">
+            <div id="settings-text">
+                ANALYTICS
+            </div>
+            <div class="display-settings">
+                <div class="display-settings">
+                    <h3>History Information</h3>
+                    <details class="settings-details">
+                        <summary class="settings-name">
+                            <span><i class="fa-solid fa-cookie"></i>Search History</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </summary>
+
+                        <small style="opacity: .7;"><b>Note: </b>Search history only show your last three searches</small>
+
+                        <ul class="history-ul">
+                            <li>One Piece</li>
+                            <li>Demon Slayer</li>
+                            <li>Naruto</li>
+                            <li>Gangster...</li>
+                        </ul>
+                    </details>
+                </div>
+                <div class="display-settings settings-comment">
+                    <h3>Comments</h3>
+                    <details class="settings-details">
+                        <summary class="settings-name">
+                            <span><i class="fa-solid fa-cookie"></i>Sent Comments</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </summary>
+
+                        <small style="opacity: .7;"><b>Note: </b>This only show your last four comments</small>
+
+                        <ul class="history-ul">
+                            <li>One Piece is really cheezy in the beginning then starts to get really interesting to mind blowing, my fav character is Zoro (we are kinda alike) lol.<a href="#">Goto comment</a></li>
+                            <li>Demon Slayer is really violent, would recommend you don't show your kids. I really loved it. Can't wait for the next season.<a href="#">Goto comment</a></li>
+                            <li>Naruto is really worth the title of the most popular anime, probably the best so far. I haven't seen all tho.<a href="#">Goto comment</a></li>
+                            <li>Gangster storyline is too plain, still has cool fight scenes tho...<a href="#">Goto comment</a></li>
+                            <li><a href="#">All comments</a><a href="#">Goto comment</a></li>
+                        </ul>
+                    </details>
+                    <details class="settings-details">
+                        <summary class="settings-name">
+                            <span><i class="fa-solid fa-cookie"></i>Received Replies</span>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </summary>
+
+                        <small style="opacity: .7;"><b>Note: </b>This only show your last four replies</small>
+
+                        <ul class="history-ul">
+                            <li>One Piece is really cheezy in the beginning then starts to get really interesting to mind blowing, my fav character is Zoro (we are kinda alike) lol.<a href="#">Goto reply</a></li>
+                            <li>Demon Slayer is really violent, would recommend you don't show your kids. I really loved it. Can't wait for the next season.<a href="#">Goto reply</a></li>
+                            <li>Naruto is really worth the title of the most popular anime, probably the best so far. I haven't seen all tho.<a href="#">Goto reply</a></li>
+                            <li>Gangster storyline is too plain, still has cool fight scenes tho...<a href="#">Goto reply</a></li>
+                            <li><a href="#">All replies</a></li>
+                        </ul>
+                    </details>
+                    <div class="display-settings">
+                        <h3>Reports</h3>
+                        <details class="settings-details">
+                            <summary class="settings-name">
+                                <span><i class="fa-solid fa-cookie"></i>Red Flags</span>
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </summary>
+    
+                            <small style="opacity: .7;"><b>Warning: </b>If your Red flags are more than 20 in a month. Your account will be removed</small>
+    
+                            <ul class="history-ul">
+                                <li><b>Received: </b> 0</li>
+                                <li><b>Sent:</b> 4</li>
+                            </ul>
+                        </details>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="space-div"></div>
+
+    <div class="settings-footer">
+        {% include 'accounts/footer.html' %}
+    </div>
+</div>
+
+    <script src="{% static '/js/main.js' %}"></script>
+
+</body>
+</html>
